@@ -106,13 +106,13 @@ const Form = () => {
             {serverError ? <p className="error">{serverError}</p> : null}
             <label htmlFor="name">
                 Name for the order:
-                <input id="name" type="text" name="name" onChange={changeHandler} value={formState.name}/>
+                <input data-cy="name" id="name" type="text" name="name" onChange={changeHandler} value={formState.name}/>
                 {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
             </label>
 
             <label htmlFor="size">
                 Size:
-                <select id="size" name="size" onChange={changeHandler}>
+                <select data-cy="size"id="size" name="size" onChange={changeHandler}>
                     <option value="">"What size pizza would you like?</option>
                     <option value="small">Small</option>
                     <option value="medium">Meduim</option>
@@ -124,7 +124,7 @@ const Form = () => {
 
             <label htmlFor="sauce">
                 Sauce:
-                <select id="sauce" name="sauce" onChange={changeHandler}>
+                <select data-cy="sauce"id="sauce" name="sauce" onChange={changeHandler}>
                     <option value="">What sauce would you like on your Pizza?</option>
                     <option value="marinera">Marinera</option>
                     <option value="alfredo">Alfredo</option>
@@ -138,41 +138,41 @@ const Form = () => {
                 
                 <label htmlFor="chicken">
                     Chicken
-                    <input name="chicken" type="checkbox" checked={formState.chicken} onChange={changeHandler}/>
+                    <input data-cy="chicken"name="chicken" type="checkbox" checked={formState.chicken} onChange={changeHandler}/>
                 </label>
                 <label htmlFor="pepperoni">
                     Pepperoni
-                    <input name="pepperoni" type="checkbox" checked= {formState.pepperoni} onChange={changeHandler}/>
+                    <input data-cy="pepperoni" name="pepperoni" type="checkbox" checked= {formState.pepperoni} onChange={changeHandler}/>
                 </label>
                 <label htmlFor="sausage">
                     Sausage
-                    <input name="sausage" type="checkbox" checked={formState.sausage} onChange={changeHandler}/>
+                    <input data-cy="sausage"name="sausage" type="checkbox" checked={formState.sausage} onChange={changeHandler}/>
                 </label>
                 <label htmlFor="bellPeppers">
                     Bell Peppers
-                    <input name="bellPeppers" type="checkbox" checked={formState.bellPeppers} onChange={changeHandler}/>
+                    <input data-cy="bellPeppers" name="bellPeppers" type="checkbox" checked={formState.bellPeppers} onChange={changeHandler}/>
                 </label>
                 <label htmlFor="pineapple">
                     Pineapple 
-                    <input name="pineapple" type="checkbox" checked={formState.pineapple} onChange={changeHandler}/>
+                    <input data-cy="pineapple" name="pineapple" type="checkbox" checked={formState.pineapple} onChange={changeHandler}/>
                 </label>
                 <label htmlFor="onions">
                     Onions 
-                    <input name="onions" type="checkbox" checked={formState.onions} onChange={changeHandler}/>
+                    <input data-cy="onions"name="onions" type="checkbox" checked={formState.onions} onChange={changeHandler}/>
                 </label>
                 <label htmlFor="olives">
                     Olives 
-                    <input name="olives" type="checkbox" checked={formState.olives} onChange={changeHandler}/>
+                    <input data-cy="olives"name="olives" type="checkbox" checked={formState.olives} onChange={changeHandler}/>
                 </label>
             </div>
 
             <label htmlFor="specialRequest">
                 Special Instructions:
-                <textarea name="specialRequest" onChange={changeHandler}/>
+                <textarea data-cy="specialRequest" name="specialRequest" onChange={changeHandler}/>
                 {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
             </label>
             <label htmlFor="quantity">
-                <select id="quantity" name="quantity" onChange={changeHandler}>
+                <select data-cy="quantity" id="quantity" name="quantity" onChange={changeHandler}>
                     <option value="">How many pizzas would you like?</option>
                     <option value="one">1</option>
                     <option value="two">2</option>
