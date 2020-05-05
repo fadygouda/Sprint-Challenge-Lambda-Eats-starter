@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import * as yup from "yup"
 import axios from "axios"
+import styled from "styled-components"
 
 const Form = () => {
 
@@ -65,6 +66,7 @@ const Form = () => {
 
         axios.post("https://reqres.in/api/users", formState)
             .then(res => {
+                console.log(res)
                 setPost(res.data);
                 
                 setFormState({
@@ -85,7 +87,7 @@ const Form = () => {
                 setServerError(null);
             })
             .catch(err => {
-                setServerError("Error!")
+                setServerError("Error!", err)
             })
     }
 
@@ -98,10 +100,25 @@ const Form = () => {
         validateChange(event);
         setFormState(newFormData);
     }
+    const Pre = styled.div`
+    background-color: #00ffd0;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    `;
 
-
+    const Form = styled.div`
+    display: flex;
+    text-align: center;
+    background-color: #2aa4af;
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid #110c0c;
+    flex-direction: column;
+    `;
 
     return(
+        <Form>
         <form onSubmit={formSubmit}>
             {serverError ? <p className="error">{serverError}</p> : null}
             <label htmlFor="name">
@@ -184,9 +201,9 @@ const Form = () => {
                 {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}                  
             </label>
 
-            <pre>{JSON.stringify(post, null, 2)}</pre>
+            <Pre><pre>{JSON.stringify(post, null, 2)}</pre></Pre>
             <button type="submit" disabled={buttonDisabled}>Submit!</button>
-        </form>
+            </form></Form>
     )
 }
 export default Form;
